@@ -8,11 +8,17 @@ Para isso, o backend recebe o vídeo, extrai o áudio e envia para a API da Open
 
 ## Como executar?
 
-0. Tenha o Node instalado
+0. Instale o Node e a [extensão do Prisma](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) para VSCode
 1. Faça o clone/download do repositório
 2. Execute `npm i`
-3. Execute `npx prisma db seed`
-4. Execute `npm run dev`
+3. Execute `cp .env.example`
+4. Acesse a [plataforma da OpenAI](https://platform.openai.com/)
+5. No menu do canto superior direito, acesse `View API keys`
+6. Crie uma nova chave e copie
+7. Cole a chave no campo `OPENAI_KEY` do arquivo `.env`
+8. Execute `npx prisma migrate dev` para criar o database
+9. Execute `npx prisma db seed` para popular a tabela de prompts
+10. Execute `npm run dev`
 
 ## Como testar as rotas?
 
