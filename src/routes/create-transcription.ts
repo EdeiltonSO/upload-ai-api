@@ -28,16 +28,17 @@ export async function createTranscriptionRoute(app: FastifyInstance) {
 
         const audioReadStream = createReadStream(videoPath)
 
-        const response = await openai.audio.transcriptions.create({
-            file: audioReadStream,
-            model: 'whisper-1',
-            language: 'pt',
-            response_format: 'json',
-            temperature: 0,
-            prompt
-        })
+        // const response = await openai.audio.transcriptions.create({
+        //     file: audioReadStream,
+        //     model: 'whisper-1',
+        //     language: 'pt',
+        //     response_format: 'json',
+        //     temperature: 0,
+        //     prompt
+        // })
 
-        const transcription = response.text
+        // const transcription = response.text
+        const transcription = 'Texto estático pra testar a transcrição pois a requisição pra API da OpenAI tá dando erro 500'
 
         await prisma.video.update({
             where: {
